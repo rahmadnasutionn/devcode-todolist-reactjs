@@ -46,7 +46,9 @@ function ActivityList(props) {
     return (
         <div
             onClick={handleClick}
-            className='p-6 w-full lg:w-56 h-56 bg-white rounded-xl border border-gray-200 shadow-xl inline-flex flex-col justify-between cursor-pointer'>
+            className='p-6 w-full lg:w-56 h-56 bg-white rounded-xl border border-gray-200 shadow-xl inline-flex flex-col justify-between cursor-pointer'
+            data-cy='activity-item'
+            >
             <h1 className='mb-2 text-xl font-bold'
                 data-cy="activity-item-title">
                 {props.title}
@@ -60,8 +62,7 @@ function ActivityList(props) {
                     htmlFor="my-modal"
                     className="btn modal-button btn-circle btn-sm btn-outline btn-error"
                     data-cy="activity-item-delete-button"
-                    onClick={handleDel}
-                >
+                    onClick={handleDel}>
                     <i className='bx bx-trash'></i>
                 </label>
             </div>

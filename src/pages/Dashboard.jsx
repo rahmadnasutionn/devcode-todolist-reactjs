@@ -51,7 +51,7 @@ function Dashboard() {
             <TitleBar addActivity={addActivity} />
             {activity.length == 0 ?
                 <div className='min-h-[70vh] lg:min-h-[60vh] flex items-center' onClick={addActivity}>
-                    <EmptyState datacy={"activity-empty-state"} main />
+                    <EmptyState main />
                 </div>
                 :
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-4 mt-7 lg:mt-13 max-w-5xl' data-cy="activity-item">

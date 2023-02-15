@@ -91,7 +91,7 @@ function TitleBar({ item, afterChange, addActivity, setSortValue, sortValue }) {
                             onClick={addActivity}
                         >
                             <i className='bx bx-plus bx-sm'></i>
-                            <span className="hidden lg:block"> Tambah </span>
+                            <span className="hidden lg:block">Tambah</span>
                         </button>
                     </>
                     : <>
@@ -99,7 +99,7 @@ function TitleBar({ item, afterChange, addActivity, setSortValue, sortValue }) {
                             <></> :
                             <>
                                 <div className='inline-flex items-center gap-3 lg:gap-4'>
-                                    <Link to={`/`}>
+                                    <Link to={`/`} data-cy='todo-back-button'>
                                         <i className='bx bxs-chevron-left bx-md bx-fade-left-hover'></i>
                                     </Link>
                                     {editTitle ?
@@ -127,14 +127,13 @@ function TitleBar({ item, afterChange, addActivity, setSortValue, sortValue }) {
                                 </div>
                                 <div className='inline-flex items-center gap-3 lg:gap-4'>
                                     <div className="dropdown dropdown-end">
-                                        <label
+                                        <button
                                             tabIndex={0}
                                             className="btn btn-circle btn-outline btn-secondary m-1"
-                                            data-cy="todo-sort-button"
-                                        >
+                                            data-cy="todo-sort-button">
                                             <i className='bx bx-sort-alt-2 bx-sm'></i>
-                                        </label>
-                                        <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-md w-52">
+                                        </button>
+                                        <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-md w-52" data-cy='sort-parent'>
                                             {sortOption.map((sortItem) => (
                                                 <li
                                                     key={sortItem.value}
@@ -156,8 +155,7 @@ function TitleBar({ item, afterChange, addActivity, setSortValue, sortValue }) {
                                         className="btn btn-primary gap-2  font-semibold text-base normal-case px-3 lg:px-5"
                                         type="button"
                                         data-cy="todo-add-button"
-                                        htmlFor="my-modal-2"
-                                    >
+                                        htmlFor="my-modal-2">
                                         <i className='bx bx-plus bx-sm'></i>
                                         <span className="hidden lg:block"> Tambah </span>
                                     </label>
